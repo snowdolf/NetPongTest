@@ -3,6 +3,7 @@ using Firebase.Auth;
 using Firebase.Extensions;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class AuthManager : MonoBehaviour
@@ -75,6 +76,7 @@ public class AuthManager : MonoBehaviour
             {
                 firebaseUser = task.Result.User;
                 Debug.Log(firebaseUser.Email);
+                SceneManager.LoadScene("Lobby");
             }
         }
         );
